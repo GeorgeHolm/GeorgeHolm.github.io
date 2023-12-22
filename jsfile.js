@@ -1,7 +1,7 @@
 const colorPicker = document.getElementById("colorPicker");
 const box = document.getElementById("box");
 const output = document.getElementById("output");
-const primColor = document.querySelector("second");
+const primColor = document.querySelector(".second");
 
 box.style.borderColor = colorPicker.value;
 
