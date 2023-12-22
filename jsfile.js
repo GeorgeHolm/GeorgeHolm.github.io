@@ -1,7 +1,7 @@
 const colorPicker = document.getElementById("colorPicker");
 const box = document.getElementById("box");
 const output = document.getElementById("output");
-const primColor = document.querySelector(":root");
+const primColor = document.querySelector("second");
 
 box.style.borderColor = colorPicker.value;
 
@@ -22,3 +22,11 @@ colorPicker.addEventListener(
   },
   false,
 );
+
+
+function setTheme() {
+    const newColor = colorPicker.value;
+    primColor.style.setProperty("background-color", newColor);
+  }
+  
+  primColor.addEventListener("change", setTheme);
