@@ -4,7 +4,7 @@ const output = document.getElementById("output");
 
 box.style.borderColor = colorPicker.value;
 
-document.documentElement.style.setProperty('--primary-color', colorPicker.value);
+document.querySelector(":root").style.setProperty('--primary-color', colorPicker.value);
 
 colorPicker.addEventListener(
   "input",
