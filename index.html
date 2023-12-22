@@ -9,6 +9,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+        :root { 
+            --primary-color: output; 
+            --secondary-color: rgb(0, 0, 0); 
+        } 
+  
+        .first { 
+            /* Apply color using CSS var */ 
+            background-color: var(--primary-color); 
+            color: var(--secondary-color); 
+        } 
+  
+        .second { 
+            /* Apply color using CSS var */ 
+            background-color: var(--secondary-color); 
+            color: var(--primary-color); 
+        } 
+
+        .third { 
+
+          /* Apply color using CSS var */ 
+          background-color: var(--primary-color); 
+          color: var(--secondary-color); 
+}
 </style>
 </head>
 <body style="color: #000000;">
@@ -124,7 +148,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <div class="w3-container w3-card w3-white">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Style My Portfolio</h2>
         
-        <div class="w3-container">
+        <div class="w3-container first">
           <label for="colorPicker" id="output">Pick Theme:</label>
           <input type="color" value="#000000" id="colorPicker" />
           <p id="output"></p>
