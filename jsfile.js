@@ -4,6 +4,8 @@ const output = document.getElementById("output");
 
 box.style.borderColor = colorPicker.value;
 
+
+
 colorPicker.addEventListener(
   "input",
   (event) => {
