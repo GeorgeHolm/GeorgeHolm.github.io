@@ -1,32 +1,25 @@
-const colorPicker = document.getElementById("colorPicker");
-const box = document.getElementById("box");
-const output = document.getElementById("output");
-const primColor = document.querySelector(".second");
+let colorPicker;
+const defaultColor = "#0000ff";
 
-box.style.borderColor = colorPicker.value;
+window.addEventListener("load", startup, false);
 
+function startup() {
+  colorPicker = document.querySelector("#color-picker");
+  colorPicker.value = defaultColor;
+  colorPicker.addEventListener("input", updateFirst, false);
+  colorPicker.addEventListener("change", updateAll, false);
+  colorPicker.select();
+}
 
-colorPicker.addEventListener(
-  "input",
-  (event) => {
-    box.style.borderColor = event.target.value;
-  },
-  false,
-);
-
-colorPicker.addEventListener(
-  "change",
-  (event) => {
-    output.innerText = `Color set to ${colorPicker.value}.`;
-    primColor.style.setProperty("--primary-color", colorPicker.value);
-  },
-  false,
-);
-
-
-function setTheme() {
-    const newColor = colorPicker.value;
-    primColor.style.setProperty("background-color", newColor);
+function updateFirst(event) {
+  const p = document.querySelector("p");
+  if (p) {
+    p.style.color = event.target.value;
   }
-  
-  primColor.addEventListener("change", setTheme);
+}
+
+function updateAll(event) {
+  document.querySelectorAll("p").forEach((p) => {
+    p.style.color = event.target.value;
+  });
+}
